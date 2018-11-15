@@ -1,0 +1,130 @@
+@custom-media --desktop (min-width: 60em);
+
+.footer {
+  padding: 2lh 0;
+  border-top: 1px solid var(--color-grey-500);
+  margin-top: var(--section-gap);
+  @media (--desktop) {
+    margin-top: 4lh;
+  }
+}
+
+.wrapper {
+  max-width: 28rem;
+  width: 100%;
+  @media not all and (--desktop) {
+    margin: 0 auto;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (--desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.cta {
+  width: 100%;
+  padding-bottom: 2lh;
+  border-bottom: 1px solid var(--color-grey-500);
+  @media (--desktop) {
+    border: none;
+    margin-right: 2lh;
+  }
+}
+
+.heading {
+  margin: 0 0 1lh;
+  @media (--desktop) {
+    max-width: 10em;
+  }
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-ui);
+  font-size: var(--scale-00);
+  padding: 2lh 0;
+  @media (--desktop) {
+    padding-top: 1em;
+  }
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-heading {
+  margin-bottom: 1rem;
+}
+
+.nav-item {
+  margin: 0.5em 0;
+}
+
+.nav-item::after {
+  bottom: -0.25em;
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (--desktop) {
+    flex-direction: row-reverse;
+    border-top: 1px solid var(--color-grey-500);
+    padding-top: 2lh;
+  }
+}
+
+.social {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 2lh;
+  font-size: var(--scale-00);
+  @media (--desktop) {
+    padding: 0;
+    max-width: 18rem;
+  }
+}
+
+.social-link {
+  line-height: 1;
+  color: var(--color-grey-700);
+  opacity: 0.75;
+  transition: opacity 300ms ease;
+}
+
+.social-link:hover {
+  opacity: 1;
+}
+
+.social-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.logo {
+  padding-top: 2lh;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid var(--color-grey-500);
+  @media (--desktop) {
+    border-top: none;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.logo-img {
+  height: 35px;
+  width: 115px;
+  display: block;
+}

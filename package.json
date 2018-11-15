@@ -1,0 +1,28 @@
+{
+  "name": "generator-gatsby",
+  "version": "0.0.0",
+  "description": "Generate Gatsby-based projects for Little Planet",
+  "author": {
+    "name": "Little Planet Creative",
+    "email": "sean@littleplanetcreative.com",
+    "url": "https://www.littleplanetcreative.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "files": [
+    "generators"
+  ],
+  "main": "generators/app/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "gatsby"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  }
+}

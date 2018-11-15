@@ -1,0 +1,51 @@
+@custom-media --tablet (min-width: 42em);
+
+/**
+ * Document
+ * Root line height reflected to postcss config for rlh units
+ */
+html {
+  font-size: responsive 14px 16px;
+  color: var(--color-black);
+  line-height: 1.6;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+  font: var(--font-body);
+  position: relative;
+  margin: 0;
+}
+
+/**
+ * Typography
+ */
+h1,
+h2 {
+  font: var(--font-heading);
+}
+
+/**
+ * Style patches
+ */
+/* Make box-sizing inheritable */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Strip default anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none !important;
+}
+
+/* Patch hidden prop in Chrome/IE */
+[hidden] {
+  display: none !important;
+}

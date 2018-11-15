@@ -1,0 +1,42 @@
+@custom-media --desktop (min-width: 50em);
+
+.page {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(10vw, 1fr)
+    minmax(0, var(--content-max-width))
+    minmax(10vw, 1fr);
+  overflow: hidden;
+  min-height: 100vh;
+  /* Fixed header */
+  /* padding-top: 6rem; */
+}
+
+.page > * {
+  align-self: start;
+}
+
+.content {
+  display: subgrid !important;
+  margin-top: 1lh;
+  -ms-grid-row: 2;
+  @media (--desktop) {
+    margin-top: 2lh;
+  }
+}
+
+/* Default everything to content area */
+.content > :global(*) {
+  grid-column: 2 / 3;
+}
+
+/* Shim grid row auto-placement for IE11 */
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  @for $i from 1 to 30 {
+    .content > :global(*:nth-child($i)) {
+      grid-row: $i / span 1;
+    }
+  }
+}

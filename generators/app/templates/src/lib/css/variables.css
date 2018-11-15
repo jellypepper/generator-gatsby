@@ -1,0 +1,83 @@
+@custom-media --mobile (min-width: 26em);
+
+:root {
+  /**
+   * Typography
+   * Font stacks, sizes just sane defaults
+   */
+  --font-heading: 400 var(--scale-2) / 1.25 sans-serif;
+  --font-subheading: 600 var(--scale-1) / 1.25 sans-serif;
+  --font-body: 400 var(--scale-00) / 1.6 sans-serif;
+  --font-ui: 400 var(--scale-0) / 1 sans-serif;
+
+  @media (--mobile) {
+    --font-heading: 400 var(--scale-3) / 1.25 sans-serif;
+    --font-body: 400 var(--scale-0) / 1.6 sans-serif;
+  }
+
+  /**
+   * Modular scale
+   * Generated with postcss-modularscale
+   * See postcss.config.js for inputs
+   */
+  --scale-000: ms(-2) rem;
+  --scale-00: ms(-1) rem;
+  --scale-0: ms(0) rem;
+  --scale-1: ms(1) rem;
+  --scale-2: ms(2) rem;
+  --scale-3: ms(3) rem;
+  --scale-4: ms(4) rem;
+  --scale-5: ms(5) rem;
+
+  /**
+   * Colors
+   * Bright pallette + greyscale
+   */
+  --color-black: #21262c;
+  --color-primary: var(--color-blue);
+  --color-blue: #5bc0eb;
+  --color-grey-300: #f4f5f9;
+  --color-grey-500: #ecedf2;
+  --color-grey-700: #69707b;
+
+  /*
+   * Layout
+   * Grids and helpers
+   */
+  --content-max-width: 90rem;
+  --grid-gap: 0.75lh;
+  @media (--mobile) {
+    --grid-gap: 1lh;
+  }
+
+  /**
+   * Elevation Layers
+   * From Material Design spec
+   */
+  --elevation-1: 0 2px 4px 0 rgba(33, 38, 44, 0.1);
+  --elevation-2: 0 4px 8px 0 rgba(33, 38, 44, 0.1);
+  --elevation-3: 0 6px 12px 0 rgba(33, 38, 44, 0.1);
+
+  /**
+   * Stacking layers
+   * For maintaining sane z-indexes
+   */
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-3: 30;
+  --layer-4: 40;
+  --layer-top: 99;
+
+  /**
+   * Motion
+   * From Material Design spec
+   */
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+  /**
+   * Misc UI
+   */
+  --border-radius: 0.2em;
+}

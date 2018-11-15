@@ -1,0 +1,35 @@
+@custom-media --desktop (min-width: 50em);
+@custom-media --mobile (min-width: 40em);
+
+.button {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font: var(--font-ui);
+  border-radius: var(--border-radius);
+  padding: 0.9rem 1.5rem;
+  min-width: 7rem;
+  text-align: center;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  @media (--mobile) {
+    width: auto;
+    display: inline-flex;
+  }
+}
+
+.button[theme="primary"] {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button[theme="secondary"] {
+  background: white;
+  color: var(--color-grey-700);
+  border: 1px solid var(--color-grey-500);
+}
