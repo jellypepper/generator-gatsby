@@ -27,8 +27,9 @@ export default class NavLink extends Component {
 
   render() {
     const { link, label, prefix, onClick, className } = this.props;
-    const href = `/${prefix && prefix + '/'}${link.raw.uid !== 'home' &&
-      link.raw.uid}`;
+    const href = `/${prefix && prefix + '/'}${
+      link.raw.uid !== 'home' ? link.raw.uid : ''
+    }`;
 
     return (
       <Link
