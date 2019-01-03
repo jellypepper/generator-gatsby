@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "description": "Generate Gatsby-based projects for Little Planet",
   "author": {
-    "name": "Little Planet Creative",
-    "email": "sean@littleplanetcreative.com",
-    "url": "https://www.littleplanetcreative.com"
+    "name": "Tomorrow Labs",
+    "email": "sean@builtbytomorrow.com",
+    "url": "https://www.builtbytomorrow.com"
   },
   "license": "UNLICENSED",
   "private": true,
