@@ -38,12 +38,13 @@ module.exports = (baseConfig, env, config) => {
     });
   };
 
-  findRule('js').exclude = [/node_modules\/(?!(gatsby)\/)/];
+  findRule('js').exclude = /node_modules\/(?!(gatsby)\/)/;
 
   findRule('css').use.push('postcss-loader');
   findRule('css').exclude = /\.module\.css$/;
-
   config.module.rules.push(NEW_RULES.cssModules);
+
+  findRule('svg').exclude = /\.svg$/;
   config.module.rules.push(NEW_RULES.svgr);
 
   return config;
