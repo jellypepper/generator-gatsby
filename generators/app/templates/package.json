@@ -3,9 +3,9 @@
   "description": "<%= props.description %>",
   "version": "0.0.0",
   "author": {
-    "name": "Little Planet Creative",
-    "email": "sean@littleplanetcreative.com",
-    "url": "https://www.littleplanetcreative.com"
+    "name": "Tomorrow Labs",
+    "email": "sean@builtbytomorrow.com",
+    "url": "https://www.builtbytomorrow.com"
   },
   "license": "UNLICENSED",
   "private": true,
@@ -53,9 +53,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.2",
     "@storybook/addon-actions": "^4.0.2",
     "@storybook/addon-info": "^4.0.2",
@@ -66,6 +63,7 @@
     "@storybook/react": "^4.0.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
+    "babel-preset-gatsby": "^0.1.6",
     "dotenv": "^6.0.0",
     "plop": "^2.1.0",
     "prettier": "^1.14.3",

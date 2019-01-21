@@ -1,8 +1,24 @@
-const BABEL = {
-    presets: ['@babel/preset-react', '@babel/preset-env'],
-    plugins: ['@babel/plugin-proposal-class-properties', 'babel-plugin-macros']
+const path = require('path');
+
+const NEW_RULES = {
+  cssModules: {
+    test: /\.module\.css$/,
+    use: [
+      `style-loader`,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          importLoaders: 1,
+          localIdentName: '[path]--[local]--[hash:base64:5]'
+        }
+      },
+      `postcss-loader`
+    ],
+    include: path.resolve(__dirname, '../src')
   },
-  SVGR = {
+  svgr: {
+    test: /\.svg$/,
     use: [
       {
         loader: '@svgr/webpack',
@@ -12,36 +28,23 @@ const BABEL = {
       },
       'url-loader'
     ]
-  };
+  }
+};
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  const findRule = testMatch => {
-    return defaultConfig.module.rules.find(rule => {
-      return rule.test.toString() === testMatch.toString();
+module.exports = (baseConfig, env, config) => {
+  const findRule = ext => {
+    return config.module.rules.find(rule => {
+      return rule.test.toString().includes(ext);
     });
   };
 
-  const svgRule = findRule(/\.svg$/),
-    cssRule = findRule(/\.css$/);
+  findRule('js').exclude = [/node_modules\/(?!(gatsby)\/)/];
 
-  // Update JS loader for Gatsby
-  defaultConfig.module.rules[0] = {
-    test: /\.js$/,
-    use: [
-      {
-        loader: require.resolve('babel-loader'),
-        options: BABEL
-      }
-    ],
-    exclude: [/node_modules\/(?!(gatsby)\/)/]
-  };
+  findRule('css').use.push('postcss-loader');
+  findRule('css').exclude = /\.module\.css$/;
 
-  // Add PostCSS to global CSS files
-  cssRule.use.push('postcss-loader');
+  config.module.rules.push(NEW_RULES.cssModules);
+  config.module.rules.push(NEW_RULES.svgr);
 
-  // Add SVGR transformer
-  delete svgRule.loader;
-  svgRule.use = SVGR.use;
-
-  return defaultConfig;
+  return config;
 };

@@ -3,16 +3,15 @@ import * as storybook from '@storybook/react';
 import '../src/lib/css/variables.css';
 import '../src/lib/css/global.css';
 
-// Override Gatsby's ___loader global
-// (which prevents its method calls from creating console errors)
+// Stub Gatsby's globals
+global.__PATH_PREFIX__ = '';
 global.___loader = {
   enqueue: () => {},
   hovering: () => {}
 };
 
-// Override Gatsby's window.___push method
-// to report the path a Link uses it wasn't inside a storybook
-window.___push = pathname => {
+// Stub Gatsby's navigation
+window.___navigate = pathname => {
   action('NavigateTo:')(pathname);
 };
 
@@ -24,8 +23,8 @@ function loadStories() {
 
 // Customize Storybook
 setOptions({
-  name: '',
-  url: '',
+  name: '<%= props.name %>',
+  url: '<%= props.url %>',
   addonPanelInRight: false
 });
 
