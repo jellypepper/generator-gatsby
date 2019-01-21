@@ -1,5 +1,5 @@
-import { setOptions } from '@storybook/addon-options';
-import * as storybook from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
+import { addDecorator, configure } from '@storybook/react';
 import '../src/lib/css/variables.css';
 import '../src/lib/css/global.css';
 
@@ -21,11 +21,12 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-// Customize Storybook
-setOptions({
-  name: '<%= props.name %>',
-  url: '<%= props.url %>',
-  addonPanelInRight: false
-});
+addDecorator(
+  withOptions({
+    name: '<%= props.name %>',
+    url: '<%= props.url %>',
+    addonPanelInRight: false
+  })
+);
 
-storybook.configure(loadStories, module);
+configure(loadStories, module);
