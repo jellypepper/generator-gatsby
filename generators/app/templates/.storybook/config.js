@@ -1,7 +1,7 @@
 import { withOptions } from '@storybook/addon-options';
 import { addDecorator, configure } from '@storybook/react';
-import '../src/lib/css/variables.css';
-import '../src/lib/css/global.css';
+import '../src/globals/css/variables.css';
+import '../src/globals/css/global.css';
 
 // Stub Gatsby's globals
 global.__PATH_PREFIX__ = '';

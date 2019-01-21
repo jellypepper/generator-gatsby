@@ -7,12 +7,11 @@
    */
   --font-heading: 400 var(--scale-2) / 1.25 sans-serif;
   --font-subheading: 600 var(--scale-1) / 1.25 sans-serif;
-  --font-body: 400 var(--scale-00) / 1.6 sans-serif;
+  --font-body: 400 var(--scale-0) / 1.6 sans-serif;
   --font-ui: 400 var(--scale-0) / 1 sans-serif;
 
   @media (--mobile) {
     --font-heading: 400 var(--scale-3) / 1.25 sans-serif;
-    --font-body: 400 var(--scale-0) / 1.6 sans-serif;
   }
 
   /**
@@ -20,9 +19,9 @@
    * Generated with postcss-modularscale
    * See postcss.config.js for inputs
    */
-  --scale-000: ms(-2) rem;
-  --scale-00: ms(-1) rem;
-  --scale-0: ms(0) rem;
+  --scale-000: 0.75rem;
+  --scale-00: 0.875rem;
+  --scale-0: 1rem;
   --scale-1: ms(1) rem;
   --scale-2: ms(2) rem;
   --scale-3: ms(3) rem;
@@ -34,8 +33,7 @@
    * Bright pallette + greyscale
    */
   --color-black: #21262c;
-  --color-primary: var(--color-blue);
-  --color-blue: #5bc0eb;
+  --color-primary: #2196f3;
   --color-grey-300: #f4f5f9;
   --color-grey-500: #ecedf2;
   --color-grey-700: #69707b;
@@ -54,9 +52,14 @@
    * Elevation Layers
    * From Material Design spec
    */
-  --elevation-1: 0 2px 4px 0 rgba(33, 38, 44, 0.1);
-  --elevation-2: 0 4px 8px 0 rgba(33, 38, 44, 0.1);
-  --elevation-3: 0 6px 12px 0 rgba(33, 38, 44, 0.1);
+  --elevation-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+    0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  --elevation-3: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --elevation-4: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 
   /**
    * Stacking layers
@@ -75,9 +78,4 @@
   --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
   --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
-
-  /**
-   * Misc UI
-   */
-  --border-radius: 0.2em;
 }

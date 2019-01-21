@@ -2,7 +2,7 @@ const CONFIG = {
   modularScale: {
     ratios: [1.5],
     // Body type, line-height
-    bases: [1, 1.8]
+    bases: [1, 1.6]
   },
   lh: {
     // Body leading
