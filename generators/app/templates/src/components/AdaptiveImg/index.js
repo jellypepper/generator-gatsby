@@ -1,5 +1,6 @@
 import Img from 'gatsby-image';
 import React, { Component } from 'react';
+import './styles.module.css';
 
 /**
  * AdaptiveImg component
@@ -12,36 +13,24 @@ export default class AdaptiveImg extends Component {
   static defaultProps = {
     data: {},
     src: '',
-    alt: '',
-    tilt: null
+    alt: ''
   };
 
   render() {
-    const { src, data, alt, className, tilt, ...attrs } = this.props,
+    const { src, data, alt, className, ...attrs } = this.props,
       hasImgSet = !!data.localFile && !!data.localFile.childImageSharp,
       ImgElement = hasImgSet ? Img : 'img';
 
-    const element = (
+    return (
       <ImgElement
         {...(hasImgSet
           ? { fluid: data.localFile.childImageSharp.fluid }
           : { src: src || data.url })}
-        className={className || ''}
-        style={{
-          borderRadius: 'var(--border-radius)',
-          maxWidth: '100%'
-        }}
+        styleName="img"
         alt={alt}
+        className={className || ''}
         {...attrs}
       />
-    );
-
-    return tilt ? (
-      <Tilt className="Tilt" options={{ max: tilt, scale: 1 }}>
-        {element}
-      </Tilt>
-    ) : (
-      element
     );
   }
 }
