@@ -33,12 +33,12 @@ export default class NavLink extends Component {
     const link = href
       ? href
       : `/${prefix && prefix + '/'}${
-          document.raw.uid !== 'home' ? link.raw.uid : ''
+          document.raw.uid !== 'home' ? document.raw.uid : ''
         }`;
 
     return (
       <Link
-        to={href}
+        to={link}
         className={className || ''}
         getProps={this.isActive}
         onClick={onClick}
