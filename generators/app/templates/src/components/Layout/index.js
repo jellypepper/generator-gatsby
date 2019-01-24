@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import Header from '../Header';
 import './styles.module.css';
 
 const JSON_LD_META = [
@@ -37,8 +36,6 @@ export default class Layout extends Component {
             {JSON.stringify(JSON_LD_META)}
           </script>
         </Helmet>
-
-        <Header />
 
         <main styleName="content">{children}</main>
       </div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import favicon from '../../assets/img/favicon.png';
-import Footer from '../Footer';
 
 /**
  * Head component
@@ -46,7 +45,6 @@ export default class Head extends Component {
               <meta property="twitter:description" content={description} />
             </Helmet>
             {children}
-            {withFooter ? <Footer /> : null}
           </>
         )}
         query={graphql`

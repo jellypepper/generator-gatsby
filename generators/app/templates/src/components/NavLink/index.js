@@ -3,16 +3,19 @@ import React, { Component } from 'react';
 import './styles.module.css';
 
 /**
- * Nav link component with patched deep active state
+ * Nav link component that takes href or Prismic document
+ * with patched deep active state
  * @property {object} link Linked Prismic document
+ * @property {string} href Direct href
  * @property {string} label Text to show for link
  * @property {onClick} function Click handler callback
  *
  */
 export default class NavLink extends Component {
   static defaultProps = {
-    link: {},
     label: '',
+    href: '',
+    document: {},
     prefix: ''
   };
 
@@ -26,10 +29,12 @@ export default class NavLink extends Component {
   };
 
   render() {
-    const { link, label, prefix, onClick, className } = this.props;
-    const href = `/${prefix && prefix + '/'}${
-      link.raw.uid !== 'home' ? link.raw.uid : ''
-    }`;
+    const { document, href, label, prefix, onClick, className } = this.props;
+    const link = href
+      ? href
+      : `/${prefix && prefix + '/'}${
+          document.raw.uid !== 'home' ? link.raw.uid : ''
+        }`;
 
     return (
       <Link

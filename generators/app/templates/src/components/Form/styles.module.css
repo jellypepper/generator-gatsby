@@ -1,0 +1,54 @@
+@custom-media --tablet (min-width: 35em);
+@custom-media --desktop (min-width: 50em);
+
+.input {
+  display: block;
+  font-size: var(--scale-1);
+  padding-top: 0.5em;
+  @media (--desktop) {
+    font-size: var(--scale-2);
+  }
+}
+
+.input--textarea {
+  width: 100%;
+  max-height: 30rem;
+  resize: none !important;
+}
+
+.label {
+  display: block;
+  font: var(--font-ui);
+  font-size: var(--scale-00);
+  color: var(--color-grey-700);
+}
+
+.status {
+  display: block;
+  font: var(--font-ui);
+  font-size: var(--scale-00);
+  opacity: 0;
+  color: transparent;
+  transition: all 300ms ease;
+  &::before {
+    display: block;
+    height: 0;
+    overflow: visible;
+  }
+}
+
+[required]:valid ~ .status {
+  opacity: 1;
+  color: var(--color-green);
+  &::before {
+    content: attr(data-valid-message);
+  }
+}
+
+[data-submitted="true"] *:invalid ~ .status {
+  opacity: 1;
+  color: var(--color-red);
+  &::before {
+    content: attr(data-invalid-message);
+  }
+}
