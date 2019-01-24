@@ -38,6 +38,7 @@ export default class NavLink extends Component {
 
     return (
       <Link
+        styleName="link"
         to={link}
         className={className || ''}
         getProps={this.isActive}
