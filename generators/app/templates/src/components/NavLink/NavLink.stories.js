@@ -22,9 +22,7 @@ storiesOf('NavLink', module)
   .addParameters({
     info: DESCRIPTION
   })
-  .add('Href', () => (
-    <NavLink label={DEFAULTS.label} href={DEFAULTS.href} />
-  ))
+  .add('Href', () => <NavLink label={DEFAULTS.label} href={DEFAULTS.href} />)
   .add('Prismic Document', () => (
     <NavLink label={DEFAULTS.label} document={DEFAULTS.document} />
-  );
+  ));
