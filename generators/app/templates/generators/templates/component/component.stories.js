@@ -12,7 +12,7 @@ const DESCRIPTION = `{{description}}`,
 
 storiesOf('{{name}}', module)
   .addDecorator(withInfo)
-  .addDecorator(withKnobs)
+  .addDecorator(withKnobs({ escapeHTML: false }))
   .addParameters({
     info: DESCRIPTION
   })

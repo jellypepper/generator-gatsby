@@ -9,8 +9,6 @@
     minmax(10vw, 1fr);
   overflow: hidden;
   min-height: 100vh;
-  /* Fixed header */
-  /* padding-top: 6rem; */
 }
 
 .page > * {
