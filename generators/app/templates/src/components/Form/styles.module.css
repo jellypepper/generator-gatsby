@@ -3,11 +3,16 @@
 
 .input {
   display: block;
-  font-size: var(--scale-1);
+  font: var(--font-ui);
   padding-top: 0.5em;
-  @media (--desktop) {
-    font-size: var(--scale-2);
-  }
+  width: 100%;
+  line-height: 1.25;
+  color: inherit;
+  background: transparent;
+  outline: none;
+  margin: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .input--textarea {
