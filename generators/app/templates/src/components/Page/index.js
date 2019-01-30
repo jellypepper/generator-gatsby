@@ -18,47 +18,34 @@ export default class Head extends Component {
   };
 
   render() {
-    const { title, description, children } = this.props;
+    const { title, description, cover, children } = this.props;
 
     return (
-      <StaticQuery
-        render={data => (
-          <>
-            <Helmet>
-              {/* Basic */}
-              <title>{title}</title>
-              <meta name="description" content={description} />
-              <meta name="author" content="builtbytomorrow.com" />
-              <meta name="rating" content="general" />
-              <meta name="image" content={cover} />
+      <>
+        <Helmet>
+          {/* Basic */}
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta name="author" content="builtbytomorrow.com" />
+          <meta name="rating" content="general" />
+          <meta name="image" content={cover} />
 
-              {/* Schema.org */}
-              <meta itemprop="title" content={title} />
-              <meta itemprop="description" content={description} />
-              <meta itemprop="image" content={cover} />
+          {/* Schema.org */}
+          <meta itemprop="title" content={title} />
+          <meta itemprop="description" content={description} />
+          <meta itemprop="image" content={cover} />
 
-              {/* Social */}
-              <meta property="og:title" content={title} />
-              <meta property="og:description" content={description} />
-              <meta property="og:image" content={cover} />
-              <meta property="twitter:card" content="summary" />
-              <meta property="twitter:title" content={title} />
-              <meta property="twitter:description" content={description} />
-              <meta property="twitter:image" content={cover} />
-            </Helmet>
-            {children}
-          </>
-        )}
-        query={graphql`
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
-          }
-        `}
-      />
+          {/* Social */}
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={cover} />
+          <meta property="twitter:card" content="summary" />
+          <meta property="twitter:title" content={title} />
+          <meta property="twitter:description" content={description} />
+          <meta property="twitter:image" content={cover} />
+        </Helmet>
+        {children}
+      </>
     );
   }
 }
