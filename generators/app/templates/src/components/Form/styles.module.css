@@ -4,7 +4,6 @@
 .input {
   display: block;
   font: var(--font-ui);
-  padding-top: 0.5em;
   width: 100%;
   line-height: 1.25;
   color: inherit;
