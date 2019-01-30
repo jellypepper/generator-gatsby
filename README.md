@@ -9,13 +9,11 @@ Generator boilerplate for progressive Gatsby projects by Tomorrow. Includes:
 - Style library built on CSS varaibles
 - Internal generators for pages and components (built on Plop.js)
 
-## Installation
+## Usage
 
 ```sh
-npm i -g yo https://github.com/builtbytomorrow/generator-gatsby.git
-```
+npm i -g git+https://github.com/builtbytomorrow/generator-gatsby.git
 
-```sh
 yo gatsby
 ```
 
