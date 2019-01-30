@@ -1,16 +1,24 @@
-# Site Generator
+# Gatsby Generator
 
-Generate new Gatsby-based site projects using Yeoman
+Generator boilerplate for progressive Gatsby projects by Tomorrow. Includes:
+
+- Prismic (content) and Netlify (infrastructure) setup out of the box
+- React-style CSS modules
+- Storybook
+- A robust set of style-less base components
+- Style library built on CSS varaibles
+- Internal generators for pages and components (built on Plop.js)
+
+## Installation
 
 ```sh
-npm install -g yo
-npm install -g https://gitlab.com/littleplanet/generator-site.git
+npm i -g yo https://github.com/builtbytomorrow/generator-gatsby.git
 ```
 
 ```sh
-yo site
+yo gatsby
 ```
 
 ## License
 
-© [Little Planet](https://www.littleplanetcreative.com)
+© MIT [Tomorrow](https://www.builtbytomorrow.com)
