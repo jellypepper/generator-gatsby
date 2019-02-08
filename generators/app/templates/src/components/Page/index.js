@@ -24,8 +24,6 @@ export default class Head extends Component {
           {/* Basic */}
           <title>{title}</title>
           <meta name="description" content={description} />
-          <meta name="author" content="builtbytomorrow.com" />
-          <meta name="rating" content="general" />
           <meta name="image" content={cover} />
 
           {/* Schema.org */}

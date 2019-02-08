@@ -26,7 +26,8 @@ const PLUGIN_OPTS = {
     background_color: '#fff',
     theme_color: '#111',
     icon: './src/assets/img/icon.png',
-    display: 'minimal-ui'
+    display: 'minimal-ui',
+    include_favicon: false
   },
   layout: {
     component: require.resolve(`./src/components/Layout`)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import './styles.module.css';
+import favicon from '../../assets/img/favicon.png';
 
 const JSON_LD_META = [
   {
@@ -32,6 +33,9 @@ export default class Layout extends Component {
       <div styleName="page">
         <Helmet>
           <html lang="en" />
+          <meta name="author" content="builtbytomorrow.com" />
+          <meta name="rating" content="general" />
+          <link rel="shortcut-icon" href={favicon} />
           <script type="application/ld+json">
             {JSON.stringify(JSON_LD_META)}
           </script>
