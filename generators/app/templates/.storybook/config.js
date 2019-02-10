@@ -1,5 +1,6 @@
 import { withOptions } from '@storybook/addon-options';
 import { addDecorator, configure } from '@storybook/react';
+import '@tomorrow/bloom/bloom.css';
 import '../src/globals/css/variables.css';
 import '../src/globals/css/global.css';
 

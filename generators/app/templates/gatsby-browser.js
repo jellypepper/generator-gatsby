@@ -1,6 +1,7 @@
 import cssVarsPonyfill from 'css-vars-ponyfill';
-import './src/globals/css/global.css';
+import '@tomorrow/bloom/bloom.css';
 import './src/globals/css/variables.css';
+import './src/globals/css/global.css';
 
 // Hack FOUC from CSS vars polyfill in IE11
 try {
