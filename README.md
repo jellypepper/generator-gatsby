@@ -6,7 +6,7 @@ Generator boilerplate for progressive Gatsby projects by Tomorrow. Includes:
 - React CSS modules
 - Storybook
 - Robust set of style-agnostic base components
-- Style lib built on CSS varaibles
+- [Bloom](https://bloom.builtbytomorrow.com)-based CSS design system
 - Internal generators for pages and components (built on Plop.js)
 
 ## Usage
